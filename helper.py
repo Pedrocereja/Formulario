@@ -11,8 +11,14 @@ def prettyPrint(x, computedValueName):
 	
 	print(computedValueName[0] + ": {:.3f}".format(x.real), end="", flush=True)
 	try:
-		print(computedValueName[1] + ": {:.3f}".format(x.imag))
+		if(x.imag > 0):
+			print(computedValueName[1] + ": +j{:.3f}".format(x.imag))
+		else:
+			print(computedValueName[1] + ": -j{:.3f}".format(x.imag))
 	except IndexError:
-		print(": {:.3f}".format(x.imag))
+		if(x.imag > 0):
+			print(" +j{:.3f}".format(x.imag))
+		else:
+			print(" -j{:.3f}".format(x.imag))
 		
 	print("Em coordenadas polares: " + "{:.3f}".format(tmp[0]) + " L" + "{:3f}".format(tmp[1]))

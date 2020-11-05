@@ -33,7 +33,7 @@ def y(L, C, w, R = 0, G = 0):
 	
 	names = ["Constante de atenuação (alpha)", "Constante de fase (beta)"]
 	helper.prettyPrint(x, names)
-	return x
+	return (x.real, x.imag)
 
 def Zo(L, C, w, R = 0, G = 0):
 	"""
@@ -76,11 +76,11 @@ def Zin(Zl, Zo, B, l, a=0):
 	Retorna a impedância de entrada no formato cartesiano (alfa + jBeta)
 	"""
 	
-	z = a +B*1j
+	z = a + B*1j
 	x = cmath.atanh(z*l)
 	x = Zo*(Zl+Zo*x)/(Zo+Zl*x)
 	
-	helper.prettyPrint(x, "Impedância de entrada")
+	helper.prettyPrint(x, ["Impedância de entrada"])
 	return x
 
 def Coef(Zl, Zo):
