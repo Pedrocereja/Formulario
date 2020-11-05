@@ -30,10 +30,11 @@ def y(L, C, w, R=0, G=0):
 	Retorna a constante no formato cartesiano (alfa + jBeta)
 	"""
 	
-	x=(R+w*L*1j)*(G+w*C*1j)
-	x=cmath.sqrt(x)
+	x = (R+w*L*1j)*(G+w*C*1j)
+	x = cmath.sqrt(x)
 	print("Constante de atenuação (alfa): {0}".format(x.real))
 	print("Constante de fase (beta): {0}".format(x.imag))
+	print("Em coordenadas polares: {0}".format(cmath.polar(x)))
 	return x
 
 def Zo(L, C, w, R=0, G=0):
@@ -57,6 +58,7 @@ def Zo(L, C, w, R=0, G=0):
 	x = cmath.sqrt(x)
 	
 	print("Impedância característica : {0}".format(x))
+	print("Em coordenadas polares: {0}".format(cmath.polar(x)))
 	return x
 
 def Zin(Zl, Zo, B, l, a=0):
@@ -83,6 +85,7 @@ def Zin(Zl, Zo, B, l, a=0):
 	x = Zo*(Zl+Zo*x)/(Zo+Zl*x)
 	
 	print("Impedância de entrada : {0}".format(x))
+	print("Em coordenadas polares: {0}".format(cmath.polar(x)))
 	return x
 
 def Coef(Zl, Zo):
