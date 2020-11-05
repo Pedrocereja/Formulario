@@ -31,7 +31,8 @@ def y(L, C, w, R = 0, G = 0):
 	
 	x = cmath.sqrt((R+w*L*1j)*(G+w*C*1j))
 	
-	helper.prettyPrint(x)
+	names = ["Constante de atenuação (alpha)", "Constante de fase (beta)"]
+	helper.prettyPrint(x, names)
 	return x
 
 def Zo(L, C, w, R = 0, G = 0):
@@ -53,7 +54,7 @@ def Zo(L, C, w, R = 0, G = 0):
 	
 	x = cmath.sqrt((R + w*L*1j)/(G + w*C*1j))
 
-	helper.prettyPrint(x)
+	helper.prettyPrint(x, ["Impendância característica"])
 	return x
 
 def Zin(Zl, Zo, B, l, a=0):
@@ -79,7 +80,7 @@ def Zin(Zl, Zo, B, l, a=0):
 	x = cmath.atanh(z*l)
 	x = Zo*(Zl+Zo*x)/(Zo+Zl*x)
 	
-	helper.prettyPrint(x)
+	helper.prettyPrint(x, "Impedância de entrada")
 	return x
 
 def Coef(Zl, Zo):
