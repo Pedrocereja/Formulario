@@ -1,7 +1,7 @@
 # Formulario
 Esse formulário é a versão automatizada do Formulário 2 da disciplina de Ondas Eletromagnética do Walter Carpes.
 
-##Como usar
+## Como usar
 Para usar essas formulas basta colocar na mesma pasta que você for rodar o seu python e escrever:
 ```import formulario```
 Assim você pode usar qualquer uma delas. A sintaxe fica "formulario.y(R, L, G, C, w)", para a constante de atenuação, por exemplo.
