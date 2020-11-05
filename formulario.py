@@ -10,19 +10,18 @@ Coef(Zl, Zo) : Coefs. de reflexão, transmissão e onda estacionária
 """
 
 import cmath
-
-#TODO=exibir resultados também em polares
+import helper
 		
-def y(L, C, w, R=0, G=0):
+def y(L, C, w, R = 0, G = 0):
 	"""
 	Constante de propagação
 	
 	Parâmetros
 	----------
-	R : Resistência
 	L : Indutância
-	G : Condutância
 	C : Capacitância
+	R : Resistência
+	G : Condutância
 	w : Frequência ângular(rad/s)
 	
 	Para um  meio sem perdas, R e G possuem valor padrão em 0
@@ -30,35 +29,31 @@ def y(L, C, w, R=0, G=0):
 	Retorna a constante no formato cartesiano (alfa + jBeta)
 	"""
 	
-	x = (R+w*L*1j)*(G+w*C*1j)
-	x = cmath.sqrt(x)
-	print("Constante de atenuação (alfa): {0}".format(x.real))
-	print("Constante de fase (beta): {0}".format(x.imag))
-	print("Em coordenadas polares: {0}".format(cmath.polar(x)))
+	x = cmath.sqrt((R+w*L*1j)*(G+w*C*1j))
+	
+	helper.prettyPrint(x)
 	return x
 
-def Zo(L, C, w, R=0, G=0):
+def Zo(L, C, w, R = 0, G = 0):
 	"""
 	Impedância característica
 	
 	Parâmetros
 	----------
-	R : Resistência
 	L : Indutância
-	G : Condutância
 	C : Capacitância
 	w : Frequência ângular(rad/s)
+	R : Resistência
+	G : Condutância
 	
 	Para um  meio sem perdas, R e G possuem valor padrão em 0
 	
 	Retorna a impedância no formato cartesiano (alfa + jBeta)
 	"""
 	
-	x = (R+w*L*1j)/(G+w*C*1j)
-	x = cmath.sqrt(x)
-	
-	print("Impedância característica : {0}".format(x))
-	print("Em coordenadas polares: {0}".format(cmath.polar(x)))
+	x = cmath.sqrt((R + w*L*1j)/(G + w*C*1j))
+
+	helper.prettyPrint(x)
 	return x
 
 def Zin(Zl, Zo, B, l, a=0):
@@ -84,8 +79,7 @@ def Zin(Zl, Zo, B, l, a=0):
 	x = cmath.atanh(z*l)
 	x = Zo*(Zl+Zo*x)/(Zo+Zl*x)
 	
-	print("Impedância de entrada : {0}".format(x))
-	print("Em coordenadas polares: {0}".format(cmath.polar(x)))
+	helper.prettyPrint(x)
 	return x
 
 def Coef(Zl, Zo):
@@ -102,9 +96,10 @@ def Coef(Zl, Zo):
 	tau = TAU + 1
 	VSWR = (1+abs(TAU))/(1-abs(TAU))
 	
-	print("Coef. de reflexão (T): {0}".format(TAU))
-	print("Coef. de transmissão (tau): {0}".format(tau))
-	print("Coef. de onda estacionária (VSWR): {0}".format(VSWR))
-	
+	print("Coef. de reflexão (T): {:.3f}".format(TAU))
+	print("Coef. de transmissão (tau): {:.3f}".format(tau))
+	print("Coef. de onda estacionária (VSWR): {:.3f}".format(VSWR))
+
+
 #testando
 	
