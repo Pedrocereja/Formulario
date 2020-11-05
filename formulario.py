@@ -32,7 +32,9 @@ def y(L, C, w, R = 0, G = 0):
 	
 	print("Constante de atenuação (alfa): {:.3f}".format(x.real))
 	print("Constante de fase (beta): {:.3f}".format(x.imag))
-	print("Em coordenadas polares: {:.3f}".format(cmath.polar(x)))
+	absx = abs(x)
+	phasex = cmath.phase(x)
+	print("Em coordenadas polares: " + "{:.3f}".format(absx) + " L" + "{:3f}".format(phasex))
 	return x
 
 def Zo(L, C, w, R = 0, G = 0):
@@ -55,7 +57,9 @@ def Zo(L, C, w, R = 0, G = 0):
 	x = cmath.sqrt((R + w*L*1j)/(G + w*C*1j))
 
 	print("Impedância característica :{:.3f}".format(x))
-	print("Em coordenadas polares: {:.3f}".format(cmath.polar(x)))
+	absx = abs(x)
+	phasex = cmath.phase(x)
+	print("Em coordenadas polares: " + "{:.3f}".format(absx) + " L" + "{:3f}".format(phasex))
 	return x
 
 def Zin(Zl, Zo, B, l, a=0):
@@ -82,7 +86,9 @@ def Zin(Zl, Zo, B, l, a=0):
 	x = Zo*(Zl+Zo*x)/(Zo+Zl*x)
 	
 	print("Impedância de entrada : {:.3f}".format(x))
-	print("Em coordenadas polares: {:.3f}".format(cmath.polar(x)))
+	absx = abs(x)
+	phasex = cmath.phase(x)
+	print("Em coordenadas polares: " + "{:.3f}".format(absx) + " L" + "{:3f}".format(phasex))
 	return x
 
 def Coef(Zl, Zo):
