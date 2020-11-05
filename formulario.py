@@ -100,7 +100,4 @@ def Coef(Zl, Zo):
 	print("Coef. de reflexão (T): {:.3f}".format(TAU))
 	print("Coef. de transmissão (tau): {:.3f}".format(tau))
 	print("Coef. de onda estacionária (VSWR): {:.3f}".format(VSWR))
-
-
-#testando
 	
