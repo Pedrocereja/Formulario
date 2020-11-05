@@ -10,6 +10,7 @@ Coef(Zl, Zo) : Coefs. de reflexão, transmissão e onda estacionária
 """
 
 import cmath
+import helper
 		
 def y(L, C, w, R = 0, G = 0):
 	"""
@@ -30,9 +31,7 @@ def y(L, C, w, R = 0, G = 0):
 	
 	x = cmath.sqrt((R+w*L*1j)*(G+w*C*1j))
 	
-	print("Constante de atenuação (alfa): {:.3f}".format(x.real))
-	print("Constante de fase (beta): {:.3f}".format(x.imag))
-	rectToPolar(x)
+	helper.prettyPrint(x)
 	return x
 
 def Zo(L, C, w, R = 0, G = 0):
@@ -54,8 +53,7 @@ def Zo(L, C, w, R = 0, G = 0):
 	
 	x = cmath.sqrt((R + w*L*1j)/(G + w*C*1j))
 
-	print("Impedância característica :{:.3f}".format(x))
-	rectToPolar(x)
+	helper.prettyPrint(x)
 	return x
 
 def Zin(Zl, Zo, B, l, a=0):
@@ -81,8 +79,7 @@ def Zin(Zl, Zo, B, l, a=0):
 	x = cmath.atanh(z*l)
 	x = Zo*(Zl+Zo*x)/(Zo+Zl*x)
 	
-	print("Impedância de entrada : {:.3f}".format(x))
-	rectToPolar(x)
+	helper.prettyPrint(x)
 	return x
 
 def Coef(Zl, Zo):
@@ -103,11 +100,6 @@ def Coef(Zl, Zo):
 	print("Coef. de transmissão (tau): {:.3f}".format(tau))
 	print("Coef. de onda estacionária (VSWR): {:.3f}".format(VSWR))
 
-
-def rectToPolar(x):
-	absx = abs(x)
-	phasex = cmath.phase(x) * 180 / cmath.pi
-	print("Em coordenadas polares: " + "{:.3f}".format(absx) + " L" + "{:3f}".format(phasex))
 
 #testando
 	
