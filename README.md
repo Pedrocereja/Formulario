@@ -12,3 +12,4 @@ import formulario as f
 print(f.__doc__)     #Exibe a documentação da biblioteca, com todas as fórmulas/funções disponíveis
 print(f.Zin.__doc__) #Exibe a documentação da função Zin, com a descrição da função, suas variáveis e o que retorna
 ```
+Obs: o formato para números complexos é "a + bj", sendo 'a' e 'b' números reais. Note que necessariamente deve haver um número multiplicando o 'j'. Para mais informações sobre  biblioteta de números complexos, acesse esse [link](https://docs.python.org/3.6/library/cmath.html).
