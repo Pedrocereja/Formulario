@@ -97,3 +97,5 @@ def Coef(Zl, Zo):
 	print("Coef. de transmissão (tau): {0}".format(tau))
 	print("Coef. de onda estacionária (VSWR): {0}".format(VSWR))
 	
+#testando
+	
