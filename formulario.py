@@ -3,15 +3,17 @@ Formulário 2 de ondas eletromagnéticas
 
 Funções
 -------
-y(R, L, G, C, w) : Constante de propagação
-Zo(R, L, G, C, w) : Impendância característica
+y(L, C, w, R=0, G=0) : Constante de propagação
+Zo(L, C, w, R=0, G=0) : Impendância característica
 Zin(Zl, Zo, B, l, a=0) : Impedância de entrada
 Coef(Zl, Zo) : Coefs. de reflexão, transmissão e onda estacionária
 """
 
 import cmath
+
+#TODO=exibir resultados também em polares
 		
-def y(R, L, G, C, w):
+def y(L, C, w, R=0, G=0):
 	"""
 	Constante de propagação
 	
@@ -23,6 +25,8 @@ def y(R, L, G, C, w):
 	C : Capacitância
 	w : Frequência ângular(rad/s)
 	
+	Para um  meio sem perdas, R e G possuem valor padrão em 0
+	
 	Retorna a constante no formato cartesiano (alfa + jBeta)
 	"""
 	
@@ -32,7 +36,7 @@ def y(R, L, G, C, w):
 	print("Constante de fase (beta): {0}".format(x.imag))
 	return x
 
-def Zo(R, L, G, C, w):
+def Zo(L, C, w, R=0, G=0):
 	"""
 	Impedância característica
 	
@@ -43,6 +47,8 @@ def Zo(R, L, G, C, w):
 	G : Condutância
 	C : Capacitância
 	w : Frequência ângular(rad/s)
+	
+	Para um  meio sem perdas, R e G possuem valor padrão em 0
 	
 	Retorna a impedância no formato cartesiano (alfa + jBeta)
 	"""

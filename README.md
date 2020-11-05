@@ -2,8 +2,8 @@
 Esse formulário é a versão automatizada do Formulário 2 da disciplina de Ondas Eletromagnética do Walter Carpes.
 
 ## Funções
-- y(R, L, G, C, w) : Constante de propagação
-- Zo(R, L, G, C, w) : Impendância característica
+- y(L, C, w, R=0, G=0) : Constante de propagação
+- Zo(L, C, w, R=0, G=0) : Impendância característica
 - Zin(Zl, Zo, B, l, a=0) : Impedância de entrada
 - Coef(Zl, Zo) : Coefs. de reflexão, transmissão e onda estacionária
 
