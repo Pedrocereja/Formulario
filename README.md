@@ -1,6 +1,12 @@
 # Formulario
 Esse formulário é a versão automatizada do Formulário 2 da disciplina de Ondas Eletromagnética do Walter Carpes.
 
+## Funções
+- y(R, L, G, C, w) : Constante de propagação
+- Zo(R, L, G, C, w) : Impendância característica
+- Zin(Zl, Zo, B, l, a=0) : Impedância de entrada
+- Coef(Zl, Zo) : Coefs. de reflexão, transmissão e onda estacionária
+
 ## Como usar
 Para usar essas formulas basta colocar na mesma pasta que você for rodar o seu python e escrever ```import formulario```. Assim você pode usar qualquer uma delas. A sintaxe fica "formulario.y(R, L, G, C, w)", para a constante de atenuação, por exemplo.
 Para facilitar, sugiro escrever ```import formulario as f```. Assim você pode usar "f.y(R, L, G, C, w)", em vez da versão cumprida lá de cima.
